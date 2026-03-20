@@ -27,7 +27,6 @@ jobs:
       - name: Lint
         run: (staticcheck ./...)
 
-
   tests:
     name: Tests
     runs-on: ubuntu-latest
@@ -43,3 +42,6 @@ jobs:
 
       - name: Run test
         run: (go test ./... -cover)
+
+      - name: Install gosec
+        run: go install github.com/securego/gosec/v2/cmd/gosec@latest
